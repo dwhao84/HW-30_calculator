@@ -58,11 +58,11 @@
 			children = (
 				D3C57C402A4ECA1D001DCABE /* AppDelegate.swift */,
 				D3C57C422A4ECA1D001DCABE /* SceneDelegate.swift */,
-				D3C57C462A4ECA1D001DCABE /* Main.storyboard */,
 				D3C57C542A4ECA60001DCABE /* CalculatorViewController.swift */,
-				D3C57C492A4ECA1E001DCABE /* Assets.xcassets */,
+				D3C57C462A4ECA1D001DCABE /* Main.storyboard */,
 				D3C57C4B2A4ECA1E001DCABE /* LaunchScreen.storyboard */,
 				D3C57C4E2A4ECA1E001DCABE /* Info.plist */,
+				D3C57C492A4ECA1E001DCABE /* Assets.xcassets */,
 			);
 			path = "HW#30_calculator";
 			sourceTree = "<group>";
