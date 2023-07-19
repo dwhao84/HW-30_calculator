@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32CF13D2A66E71D009409BD /* extension_markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CF13C2A66E71D009409BD /* extension_markdown.swift */; };
 		D3C57C412A4ECA1D001DCABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57C402A4ECA1D001DCABE /* AppDelegate.swift */; };
 		D3C57C432A4ECA1D001DCABE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57C422A4ECA1D001DCABE /* SceneDelegate.swift */; };
 		D3C57C482A4ECA1D001DCABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C57C462A4ECA1D001DCABE /* Main.storyboard */; };
 		D3C57C4A2A4ECA1E001DCABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C57C492A4ECA1E001DCABE /* Assets.xcassets */; };
 		D3C57C4D2A4ECA1E001DCABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C57C4B2A4ECA1E001DCABE /* LaunchScreen.storyboard */; };
 		D3C57C552A4ECA60001DCABE /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57C542A4ECA60001DCABE /* CalculatorViewController.swift */; };
-		D3CA97D92A614C140047D1BA /* extensionFileForCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA97D82A614C140047D1BA /* extensionFileForCalculation.swift */; };
+		D3CA97D92A614C140047D1BA /* extension_calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA97D82A614C140047D1BA /* extension_calculation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D32CF13C2A66E71D009409BD /* extension_markdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_markdown.swift; sourceTree = "<group>"; };
 		D3C57C3D2A4ECA1D001DCABE /* HW#30_calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW#30_calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C57C402A4ECA1D001DCABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C57C422A4ECA1D001DCABE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +27,7 @@
 		D3C57C4C2A4ECA1E001DCABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3C57C4E2A4ECA1E001DCABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C57C542A4ECA60001DCABE /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		D3CA97D82A614C140047D1BA /* extensionFileForCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionFileForCalculation.swift; sourceTree = "<group>"; };
+		D3CA97D82A614C140047D1BA /* extension_calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_calculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,8 @@
 		D3C57C342A4ECA1D001DCABE = {
 			isa = PBXGroup;
 			children = (
-				D3CA97D82A614C140047D1BA /* extensionFileForCalculation.swift */,
+				D3CA97D82A614C140047D1BA /* extension_calculation.swift */,
+				D32CF13C2A66E71D009409BD /* extension_markdown.swift */,
 				D3C57C3F2A4ECA1D001DCABE /* HW#30_calculator */,
 				D3C57C3E2A4ECA1D001DCABE /* Products */,
 			);
@@ -142,7 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C57C412A4ECA1D001DCABE /* AppDelegate.swift in Sources */,
-				D3CA97D92A614C140047D1BA /* extensionFileForCalculation.swift in Sources */,
+				D3CA97D92A614C140047D1BA /* extension_calculation.swift in Sources */,
+				D32CF13D2A66E71D009409BD /* extension_markdown.swift in Sources */,
 				D3C57C552A4ECA60001DCABE /* CalculatorViewController.swift in Sources */,
 				D3C57C432A4ECA1D001DCABE /* SceneDelegate.swift in Sources */,
 			);
