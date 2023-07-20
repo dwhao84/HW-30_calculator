@@ -12,7 +12,7 @@
         <!--Calculator View Controller-->
         <scene sceneID="ohh-FH-cAw">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="SMM-qo-YLQ" customClass="CalculatorViewController" customModule="HW_30_calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="SMM-qo-YLQ" customClass="CalculatorViewController" customModule="HW_30_v0_1_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="40h-jC-Zmb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -599,7 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgQ-Mf-5Q4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-683" y="-315"/>
+            <point key="canvasLocation" x="-1030" y="-206"/>
         </scene>
     </scenes>
     <resources>

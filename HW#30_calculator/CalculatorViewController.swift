@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MathParser
 
 class CalculatorViewController: UIViewController {
 
@@ -44,25 +45,32 @@ class CalculatorViewController: UIViewController {
     //計算按鈕的點擊次數
     var btnTappedCount: Int  = 0
     //總數的字串
-    var equation:       String = ""
+    var equation = ""
     //小數點
-    var decimals: Bool = false
+    var decimals = false
 
-    //numbersBtn.backgroundColor = UIColor.systemGray5
+    var operatorSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //set up numberLabel.text is "0"
         numberLabel.text = "0"
+
         //let text could be fix to width
         numberLabel.adjustsFontSizeToFitWidth = true
+
         //update the btnTargetAction
         updateBtnTargetAction ()
     }
 
-
     @IBAction func numberButtonTapped(_ sender: UIButton) {
+
+        if operatorSelected {
+                numberLabel.text = ""
+                operatorSelected = false
+            }
+
         let numberTag = sender.tag - 1
         //當計算的數字超過第一個是字數時
         if performingMath == true {
@@ -83,46 +91,62 @@ class CalculatorViewController: UIViewController {
     @IBAction func operatorsBtnTapped(_ sender: UIButton) {
 
         if let inputNum = numberLabel.text {
-            let operatorSign: String
-            switch sender.tag {
-                case 14:
-                    operatorSign = "/"
-                    print("divide")
-                case 15:
-                    operatorSign = "*"
-                    print("multiply")
-                case 16:
-                    operatorSign = "-"
-                    print("minus")
-                case 17:
-                    operatorSign = "+"
-                    print("plus")
-                default:
-                    return
-            }
-            equation = inputNum + operatorSign
-            numberLabel.text = ""
-            print("happening")
-        }
+               let operatorSign: String
+               switch sender.tag {
+               case 14:
+                   operatorSign = "/"
+                   print("divide")
+               case 15:
+                   operatorSign = "*"
+                   print("multiply")
+               case 16:
+                   operatorSign = "-"
+                   print("minus")
+               case 17:
+                   operatorSign = "+"
+                   print("plus")
+               default:
+                   return
+               }
+               equation = inputNum + operatorSign
+               operatorSelected = true
+           }
     }
 
     @IBAction func equalBtnTapped(_ sender: UIButton) {
 
         if let inputNum = numberLabel.text, !inputNum.isEmpty {
-            equation += inputNum
-            print(equation)
-        }
-
-        let expression = NSExpression(format: equation)
-        if let calculateResult = expression.expressionValue(with: nil, context: nil) as? Double {
-            print(calculateResult)
-            if calculateResult.truncatingRemainder(dividingBy: 1) == 0 {
-                numberLabel.text = String(format: "%.0f", calculateResult)
-                print(calculateResult)
-            } else {
-                numberLabel.text = String(format: "%.6f", calculateResult)
+                let cleanInputNum = inputNum.replacingOccurrences(of: ",", with: "")
+                equation += cleanInputNum
             }
-        }
+
+            // 確保 equation 本身沒有逗號
+            equation = equation.replacingOccurrences(of: ",", with: "")
+
+            print("Evaluating equation: \(equation)") // <- 這裡列印equation的內容
+
+            do {
+                let result = try equation.evaluate()
+
+                var formattedResult: String
+                if result.truncatingRemainder(dividingBy: 1) == 0 {
+                    formattedResult = String(format: "%.0f", result)
+                } else {
+                    formattedResult = String(format: "%.6f", result)
+                }
+
+                numberLabel.text = formatToThousandSeparator(formattedResult)
+
+            } catch {
+                print("Error evaluating expression: \(error)")
+                // 可以在這裡提供用戶錯誤反饋
+            }
+      }
+
+    func formatToThousandSeparator(_ numberString: String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: Double(numberString) ?? 0.0)) ?? ""
     }
 
     @IBAction func dotBtnTapped(_ sender: UIButton) {
@@ -173,10 +197,10 @@ class CalculatorViewController: UIViewController {
                             print(doubleResultNum)
 
                         } else {
-                            //將numberLabel.text使用abs()再加上Int(), 將資料轉換成"\(abs(Int(doubleResultNum)))"
-                            numberLabel.text = "\(abs(Int(doubleResultNum)))"
-                            print("4")
-                            print(doubleResultNum)
+                        //將numberLabel.text使用abs()再加上Int(), 將資料轉換成"\(abs(Int(doubleResultNum)))"
+                           numberLabel.text = "\(abs(Int(doubleResultNum)))"
+                           print("4")
+                           print(doubleResultNum)
                         }
                     }
                 }
