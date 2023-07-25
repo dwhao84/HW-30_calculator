@@ -86,6 +86,7 @@ class CalculatorViewController: UIViewController {
                 numberLabel.text! += String(numberTag)
             }
         } ; print(numberTag)
+        numberLabel.text = formatToThousandSeparator(numberLabel.text!)
     }
 
     @IBAction func operatorsBtnTapped(_ sender: UIButton) {
